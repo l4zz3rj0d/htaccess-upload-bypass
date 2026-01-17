@@ -1,7 +1,7 @@
 # File Upload Bypass via .htaccess 
 ## Context
 
-If a challenge involved a file upload functionality that only allowed image extensions:
+If a challenge involved a file upload functionality that only allows image extensions:
 
 .jpg
 
@@ -17,8 +17,7 @@ first attempt to upload a PHP web shell using a double extension:
 
 shell.php.jpg
 
-
-The upload was accepted because the file ended with .jpg.
+The upload will be accepted because the file ended with .jpg if not use different extension bypass or even change the header to see the difference.
 
 Web Shell Code 
 ```
@@ -39,15 +38,10 @@ Web Shell Code
 </body>
 </html>
 ```
-## Result
-
-The file uploaded successfully
-
+If it executes by visiting the image link,then there is no need of using .htaccess.
 ### PHP code did NOT execute
 
-The server treated .jpg files strictly as images
-
-This indicated that the server was not parsing .jpg files as PHP by default.
+If the server treats .jpg files strictly as images
 
 ## Bypass Technique: .htaccess Upload
 
@@ -71,11 +65,10 @@ This configuration tells Apache to treat .jpg files as PHP.
 
 ## Final Result
 
-Revisiting the previously uploaded shell.php.jpg
-
+Revisiting the previously uploaded shell.php.jpg.
 The PHP code will be executed by the server
 
-We will obtained a working web shell
+We will obtain a working web shell
 
 ## Key Takeaways
 
